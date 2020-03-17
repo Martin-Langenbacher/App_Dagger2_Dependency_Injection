@@ -5,6 +5,7 @@ import android.util.Log;
 import javax.inject.Inject;
 
 import dagger.Module;
+import dagger.Provides;
 
 public class DieselEngine implements Engine {
     private static final String TAG = "Car";
@@ -13,6 +14,9 @@ public class DieselEngine implements Engine {
 
     // we own these classes:
     // @Inject - delete in chapter 7
+
+
+    @Inject
     public DieselEngine(int horsePower) {
         this.horsePower = horsePower;
     }

@@ -22,9 +22,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // chapter 8: We can extend builder().
         CarComponent component = DaggerCarComponent.builder()
-                .dieselEngineModule(new DieselEngineModule(100))
+                .horsePower(150)
+                .engineCapacity(1400)
                 .build();
+
+        //.dieselEngineModule(new DieselEngineModule(100))
+        // If it does NOT work: Build + Rebuild Project...
+
 
         component.inject(this);
         // inject = Field-Injection

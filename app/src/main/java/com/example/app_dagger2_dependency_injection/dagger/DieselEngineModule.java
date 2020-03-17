@@ -15,10 +15,18 @@ public class DieselEngineModule {
         this.horsePower = horsePower;
     }
 
+    // creates a provide module for it:
+    // so dagger can use it whenever it is needed - not only as in the constructor "provideEngine" below...
+
+    @Provides
+    int provideHoresPower(){
+        return horsePower;
+    }
+
     // chapter 5 or 6: @Binds
     @Provides
-    Engine provideEngine(){
-        return new DieselEngine(horsePower);
+    Engine provideEngine(DieselEngine engine){
+        return engine;
     }
 
     // long version:
