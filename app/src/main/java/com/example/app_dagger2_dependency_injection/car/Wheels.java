@@ -1,6 +1,4 @@
-package com.example.app_dagger2_dependency_injection;
-
-import javax.inject.Inject;
+package com.example.app_dagger2_dependency_injection.car;
 
 public class Wheels {
     // we don't own this class (only as an example of real lifeI so we can't annotate it with @Inject

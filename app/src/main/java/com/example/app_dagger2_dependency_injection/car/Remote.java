@@ -1,4 +1,4 @@
-package com.example.app_dagger2_dependency_injection;
+package com.example.app_dagger2_dependency_injection.car;
 
 import android.util.Log;
 

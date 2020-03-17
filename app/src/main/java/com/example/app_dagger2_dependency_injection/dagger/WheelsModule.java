@@ -1,4 +1,8 @@
-package com.example.app_dagger2_dependency_injection;
+package com.example.app_dagger2_dependency_injection.dagger;
+
+import com.example.app_dagger2_dependency_injection.car.Rims;
+import com.example.app_dagger2_dependency_injection.car.Tires;
+import com.example.app_dagger2_dependency_injection.car.Wheels;
 
 import dagger.Module;
 import dagger.Provides;
