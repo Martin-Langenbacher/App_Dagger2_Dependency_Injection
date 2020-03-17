@@ -5,12 +5,21 @@ import com.example.app_dagger2_dependency_injection.car.Engine;
 
 import dagger.Binds;
 import dagger.Module;
+import dagger.Provides;
 
 @Module
-public abstract class DieselEngineModule {
+public class DieselEngineModule {
+    private int horsePower;
 
-    @Binds
-    abstract Engine bindEngine(DieselEngine engine);
+    public DieselEngineModule(int horsePower) {
+        this.horsePower = horsePower;
+    }
+
+    // chapter 5 or 6: @Binds
+    @Provides
+    Engine provideEngine(){
+        return new DieselEngine(horsePower);
+    }
 
     // long version:
     // Engine provideEngine(PetrolEngine engine) {

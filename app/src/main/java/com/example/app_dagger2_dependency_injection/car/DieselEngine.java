@@ -4,16 +4,21 @@ import android.util.Log;
 
 import javax.inject.Inject;
 
+import dagger.Module;
+
 public class DieselEngine implements Engine {
     private static final String TAG = "Car";
 
+    private int horsePower;
+
     // we own these classes:
-    @Inject
-    public DieselEngine() {}
+    // @Inject - delete in chapter 7
+    public DieselEngine(int horsePower) {
+        this.horsePower = horsePower;
+    }
 
     @Override
     public void start(){
-        Log.d(TAG, "Diesel engine started");
-
+        Log.d(TAG, "Diesel engine started. Horsepower: " +horsePower);
     }
 }

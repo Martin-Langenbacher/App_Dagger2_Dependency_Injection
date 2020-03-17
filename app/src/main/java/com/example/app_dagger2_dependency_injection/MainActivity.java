@@ -6,12 +6,15 @@ import android.os.Bundle;
 
 import com.example.app_dagger2_dependency_injection.car.Car;
 import com.example.app_dagger2_dependency_injection.dagger.CarComponent;
+import com.example.app_dagger2_dependency_injection.dagger.DaggerCarComponent;
+import com.example.app_dagger2_dependency_injection.dagger.DieselEngineModule;
+
+import java.util.stream.DoubleStream;
 
 import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
-    @Inject
-    Car car;
+    @Inject Car car;
     //private Car car;
 
     @Override
@@ -19,7 +22,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CarComponent component = DaggerCarComponent.create();
+        CarComponent component = DaggerCarComponent.builder()
+                .dieselEngineModule(new DieselEngineModule(100))
+                .build();
+
         component.inject(this);
         // inject = Field-Injection
         //--> HomeWork: Ctrl + B ==> over DaggerCarComponent: You

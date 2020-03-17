@@ -14,7 +14,7 @@ import dagger.Component;
 // we cannot put both DieselEngine and PetrolEngine into the {} below, because then Dagger don't know,
 // which Engine to use...
 
-@Component (modules = {WheelsModule.class, DieselEngine.class})
+@Component (modules = {WheelsModule.class, DieselEngineModule.class})
 public interface CarComponent {
 
     Car getCar(); // this is just an interface - so no more needed...
