@@ -6,10 +6,12 @@ package com.example.app_dagger2_dependency_injection;
 
 import dagger.Component;
 
-@Component
+@Component (modules = WheelsModule.class)
 public interface CarComponent {
 
     Car getCar(); // this is just an interface - so no more needed...
+
+    void inject(MainActivity mainActivity);
 
 
 

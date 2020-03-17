@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import javax.inject.Inject;
 
-    private Car car;
+public class MainActivity extends AppCompatActivity {
+    @Inject Car car;
+    //private Car car;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,8 +16,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         CarComponent component = DaggerCarComponent.create();
+        component.inject(this);
+        // inject = Field-Injection
+        //--> HomeWork: Ctrl + B ==> over DaggerCarComponent: You
 
-        car = component.getCar();
+        //car = component.getCar();
         car.drive();
 
 
