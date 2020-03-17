@@ -8,11 +8,13 @@ public class Car {
     private static final String TAG = "Car";
 
     // capter 5? --> @Inject Engine engine;
+    private Driver driver;
     private Engine engine;
     private Wheels wheels;
 
     @Inject
-    public Car(Engine engine, Wheels wheels) {
+    public Car(Driver driver, Engine engine, Wheels wheels) {
+        this.driver = driver;
         this.engine = engine;
         this.wheels = wheels;
     }
@@ -25,12 +27,10 @@ public class Car {
 
     public void drive(){
         engine.start();
-        Log.d(TAG, "driving...");
-
+        Log.d(TAG, driver + " drives " + this);
+        //this is the car instances...
 
     }
-
-
 
 
 

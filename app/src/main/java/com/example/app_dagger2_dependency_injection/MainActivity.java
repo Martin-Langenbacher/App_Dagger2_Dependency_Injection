@@ -14,7 +14,7 @@ import java.util.stream.DoubleStream;
 import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
-    @Inject Car car;
+    @Inject Car car1, car2;
     //private Car car;
 
     @Override
@@ -37,11 +37,8 @@ public class MainActivity extends AppCompatActivity {
         //--> HomeWork: Ctrl + B ==> over DaggerCarComponent: You
 
         //car = component.getCar();
-        car.drive();
-
-
-
-
+        car1.drive();
+        car2.drive();
 
 
     }

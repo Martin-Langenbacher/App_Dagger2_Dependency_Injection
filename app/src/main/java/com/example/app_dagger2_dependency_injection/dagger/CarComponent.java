@@ -9,6 +9,7 @@ import com.example.app_dagger2_dependency_injection.car.Car;
 import com.example.app_dagger2_dependency_injection.car.DieselEngine;
 
 import javax.inject.Named;
+import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
@@ -17,6 +18,10 @@ import dagger.Component;
 // we cannot put both DieselEngine and PetrolEngine into the {} below, because then Dagger don't know,
 // which Engine to use...
 
+
+// Singleton: The same driver (also the number - so exactly the same driver)...!
+
+@Singleton
 @Component (modules = {WheelsModule.class, PetrolEngineModule.class})
 public interface CarComponent {
 

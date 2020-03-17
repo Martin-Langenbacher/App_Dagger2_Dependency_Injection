@@ -4,6 +4,8 @@ import com.example.app_dagger2_dependency_injection.car.Rims;
 import com.example.app_dagger2_dependency_injection.car.Tires;
 import com.example.app_dagger2_dependency_injection.car.Wheels;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -16,6 +18,7 @@ public abstract class WheelsModule {
         return new Rims();
     }
 
+    @Singleton
     @Provides
     static Tires provideTires() {
         Tires tires = new Tires();
